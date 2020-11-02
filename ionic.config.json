@@ -1,7 +1,8 @@
 {
   "name": "catalogo_produtos",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
   "type": "angular"
 }

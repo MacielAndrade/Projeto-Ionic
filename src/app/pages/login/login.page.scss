@@ -1,0 +1,19 @@
+ion-slides {
+    height: 100%;
+
+    .slide-inner {
+        width: 75%;
+        color: rgb(160, 223, 88);
+        background-color: #1f9e63;
+        border-radius: 10px;
+
+        ion-item {
+            --background: rgba(243, 219, 219, 0.2);
+            --border-radius: 10px;
+
+            ion-input {
+                --color: rgb(216, 228, 225);
+            }
+        }
+    }
+}
