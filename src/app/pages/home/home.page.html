@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-        <ion-title>Lista de EPIs</ion-title>
+        <ion-title class="titulo">Produtos</ion-title>
         <ion-buttons slot="start">
           <ion-menu-button menu="main-menu"></ion-menu-button>
         </ion-buttons>
@@ -28,47 +28,34 @@
   </ion-list>
 
   <ion-list>
-    <ion-item-sliding *ngFor="let product of products">
-      <ion-item button [routerLink]="['/details', product.id]">
-        <ion-avatar slot="start">
-          <img [src]="product.picture">
-        </ion-avatar>
+    <ion-row *ngFor="let product of products">
 
-        <ion-label>
-          {{ product.name }}
+      <ion-list button [routerLink]="['/details', product.id]">
+        <ion-card  slot="start">
+          <img [src]="product.picture">
+        </ion-card>
+
+        <ion-label >
+          <p1>{{ product.name }}</p1>
           <p>{{ product.description }}</p>
           <p>{{ product.createdAt | date: 'short' }}</p>
         </ion-label>
 
-        <ion-note color="primary" slot="end" *ngIf="product.price">{{ product.price | currency: 'BRL' }}</ion-note>
-      </ion-item>
+        <ion-note color="success" slot="end" *ngIf="product.price">{{ product.price | currency: 'BRL' }}</ion-note>
+      </ion-list>
+      <ion-icon  name="trash-outline" (click)="deleteProduct(product.id)"></ion-icon>
+      
 
-      <ion-item-options side="end">
-        <ion-item-option color="danger" (click)="deleteProduct(product.id)">
-          <ion-icon slot="top" name="trash"></ion-icon>
-          Excluir
-        </ion-item-option>
-      </ion-item-options>
-    </ion-item-sliding>
+    </ion-row>
   </ion-list>
 </ion-content>
 
 <ion-footer>
-  <ion-toolbar>
-    <ion-grid>
-      <ion-row>
-        <ion-col size="6">
-          <ion-button (click)="logout()" color="danger" expand="block">
-            Sair
-          </ion-button>
-        </ion-col>
-
-        <ion-col size="6">
-          <ion-button routerLink="/details" expand="block">
-            Add produto
-          </ion-button>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </ion-toolbar>
+  
+    <ion-col size="6">
+      <ion-button  expand="full" routerLink="/details" expand="block">
+        Add produto
+      </ion-button>
+    </ion-col>
+  
 </ion-footer>

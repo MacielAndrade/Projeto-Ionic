@@ -1,18 +1,14 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>adicionar-foto</ion-title>
+    <ion-title class="titulo">Tirar Foto</ion-title>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="home"></ion-back-button>
+      <ion-back-button defaultHref="details"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="ion-padding">
-
-    <p>Vamos bater uma foto:</p>
-    <ion-button (click)="baterFoto()">bater uma foto</ion-button>
-    <img *ngIf="imagem" [src]="imagem">
-
-  </div>
+  <h1 class="descricao">Clique na Imagem parar Tirar Foto</h1>
+  <ion-img src="https://i.pinimg.com/originals/a6/81/34/a68134d826b3e889eff9f0381583f491.png" class="imagens" (click)= "baterFoto()" ></ion-img>
+  
 </ion-content>

@@ -35,19 +35,13 @@ export class HomePage implements OnInit {
     this.productsSubscription.unsubscribe();
   }
 
-  async logout(){
-    try {
-      await this.authService.logout();
-    }catch (error){
-      console.error(error);
-    }
-  }
+  
 
   async deleteProduct(id: string){
     try{
       await this.productsService.deleteProduct(id);
     }catch(error){
-      this.presentToast('Erro ao Salvar');
+      this.presentToast('Erro ao Apagar');
     }
   }
 
