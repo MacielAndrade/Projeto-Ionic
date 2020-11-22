@@ -14,13 +14,14 @@ export class HomePage implements OnInit {
   private products = new Array<Product>();
   private productsSubscription: Subscription;
   toastCtrl: any;
+  loading: HTMLIonLoadingElement;
 
 
   constructor(
     private productsService: ProductService,
     private authService: AuthService,
-    private LoadingCtrl: LoadingController,
-    private ToastCtrl: ToastController
+    private loadingCtrl: LoadingController,
+    private loastCtrl: ToastController
     )  {
     this.productsSubscription = this.productsService.getProducts().subscribe(data => {
       this.products = data;
@@ -42,7 +43,7 @@ export class HomePage implements OnInit {
     }
   }
 
-  async deleteProduct(id: String){
+  async deleteProduct(id: string){
     try{
       await this.productsService.deleteProduct(id);
     }catch(error){

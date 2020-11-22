@@ -1,7 +1,8 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    
     </ion-buttons>
 
     <ion-title>Cadastro de EPIs</ion-title>
@@ -16,9 +17,20 @@
     <ion-item>
       <ion-input type="text" [(ngModel)]="product.description" placeholder="Descrição"></ion-input>
     </ion-item>
-    <ion-item>
-      <ion-input type="text" [(ngModel)]="product.picture" placeholder="Foto"></ion-input>
-    </ion-item>
+    
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-input type="text" [(ngModel)]="product.picture" placeholder="Foto"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-icon size= "large"  slot="end" name="camera" routerLink="/adicionar-foto"></ion-icon>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    
     <ion-item>
       <ion-input type="text" [(ngModel)]="product.price" placeholder="Preço"></ion-input>
     </ion-item>

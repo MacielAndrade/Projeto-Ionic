@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>adicionar-foto</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+
+    <p>Vamos bater uma foto:</p>
+    <ion-button (click)="baterFoto()">bater uma foto</ion-button>
+    <img *ngIf="imagem" [src]="imagem">
+
+  </div>
+</ion-content>

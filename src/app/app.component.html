@@ -1,3 +1,24 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-menu menuId = "main-menu" contentId="main">
+    <ion-content>
+      <h1>Menu</h1>
+
+      <ion-list>
+        <ion-menu-toggle auto-hide="false" *ngFor="let menu of menuService.menu">
+          <ion-item [routerDirection]="'root'" (click)="acaoMenu(menu.acao)">
+            <ion-icon slot="start" [name]="menu.icone"></ion-icon>
+            <ion-label>
+              {{menu.label}}
+            </ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
+        <ion-button [routerDirection]="'root'" (click)="logout()" expand="full">Sair</ion-button>
+
+      </ion-list>
+
+    </ion-content>
+  </ion-menu >
+  <ion-router-outlet id="main"></ion-router-outlet>
+
 </ion-app>

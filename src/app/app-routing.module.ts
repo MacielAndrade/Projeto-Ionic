@@ -7,7 +7,7 @@ import { AuthGuard } from './guards/auth.guard';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'introducao',
     pathMatch: 'full'
   },
   {
@@ -26,6 +26,23 @@ const routes: Routes = [
     path: 'details/:id',
     loadChildren: () => import('./pages/details/details.module').then( m => m.DetailsPageModule), canActivate: [AuthGuard]
   },
+  {
+    path: 'adicionar-foto',
+    loadChildren: () => import('./pages/adicionar-foto/adicionar-foto.module').then( m => m.AdicionarFotoPageModule)
+  },
+  {
+    path: 'contato',
+    loadChildren: () => import('./pages/contato/contato.module').then( m => m.ContatoPageModule)
+  },
+  {
+    path: 'sobre',
+    loadChildren: () => import('./pages/sobre/sobre.module').then( m => m.SobrePageModule)
+  },
+  {
+    path: 'introducao',
+    loadChildren: () => import('./pages/introducao/introducao.module').then( m => m.IntroducaoPageModule)
+  },
+
 
 ];
 
